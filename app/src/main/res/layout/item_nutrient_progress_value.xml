@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="nutrientProgress"
+            type="com.mahmoudalyudeen.ambrosia.domain.NutrientProgress" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/simple_padding_large">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.format(@string/format_nutrient_name_amount, nutrientProgress.nutrient.name, nutrientProgress.currentAndUnit)}"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_size_primary"
+                tools:text="@string/placeholder" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{nutrientProgress.percentage+`%`}"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_size_primary"
+                tools:text="@string/placeholder_digits" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDividers" />
+
+    </LinearLayout>
+
+</layout>

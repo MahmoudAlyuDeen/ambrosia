@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#512DA8</color>
+    <color name="colorAccent">#7C4DFF</color>
+
+    <!--text light -->
+    <color name="colorTextPrimary">#BF000000</color>
+    <color name="colorTextSecondary">#8C000000</color>
+    <color name="colorTextHint">#63000000</color>
+    <color name="colorDividers">#1B000000</color>
+    <color name="colorRipple">#1B000000</color>
+
+    <!--text dark -->
+    <color name="colorTextPrimaryDark">#DDFFFFFF</color>
+    <color name="colorTextSecondaryDark">#8CFFFFFF</color>
+    <color name="colorTextHintDark">#63FFFFFF</color>
+
+    <!--basic colors -->
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorLightGrey">#E6F5F5F5</color>
+    <color name="colorDeepGrey">#262626</color>
+    <color name="colorGrey">#424242</color>
+
+    <!-- app colors -->
+    <color name="colorEmptyChart">#0F000000</color>
+
+</resources>

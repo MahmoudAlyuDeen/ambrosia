@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="nutrientProgress"
+            type="com.mahmoudalyudeen.ambrosia.domain.NutrientProgress" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/simple_padding_medium"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:background="@color/colorWhite">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:layout_width="@dimen/charts_circle_size"
+                android:layout_height="@dimen/charts_circle_size"
+                app:cpb_background_progressbar_color="@color/colorEmptyChart"
+                app:cpb_background_progressbar_width="@dimen/charts_thickness"
+                app:cpb_progressbar_color="@color/colorPrimary"
+                app:cpb_progressbar_width="@dimen/charts_thickness"
+                app:cpb_round_border="true"
+                app:nutrientProgress="@{nutrientProgress}"
+                tools:cpb_progress="80" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{nutrientProgress.percentage+`%`}"
+                android:textColor="@color/colorTextPrimary"
+                tools:text="@string/placeholder_digits" />
+
+        </FrameLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/simple_padding_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{nutrientProgress.nutrient.name}"
+            android:textColor="@color/colorTextSecondary"
+            tools:text="@string/placeholder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{nutrientProgress.currentAndUnit}"
+            android:textColor="@color/colorTextSecondary"
+            tools:text="@string/placeholder_digits" />
+
+    </LinearLayout>
+
+</layout>

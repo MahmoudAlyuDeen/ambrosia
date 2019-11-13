@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Ambrosia</string>
+
+    <!--  Screen titles  -->
+    <string name="title_home">Daily Intake</string>
+    <string name="title_products">Add Meal</string>
+    <string name="title_portion">Add Meal</string>
+    <string name="title_report">Nutritional Report</string>
+
+    <!--  Placeholders  -->
+    <string name="placeholder">Placeholder</string>
+    <string name="placeholder_digits">0.0</string>
+
+    <!--  Products screen  -->
+    <string name="format_nutrient_count">%d Nutrients</string>
+
+    <!--  Portion screen  -->
+    <string name="header_portion_information">Serving information</string>
+    <string name="header_nutrients">Percent of your daily needs</string>
+    <string name="hint_portion_count">Servings</string>
+    <string name="hint_portion_size">Serving size</string>
+    <string name="action_confirm_portion">Confirm</string>
+
+    <!--  Home screen  -->
+    <string name="button_add_entry">Add Meal</string>
+
+    <!--  Report screen  -->
+    <string name="format_nutrient_name_amount">%s ( %s )</string>
+
+</resources>

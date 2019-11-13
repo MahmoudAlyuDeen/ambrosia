@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="nutrientProgress"
+            type="com.mahmoudalyudeen.ambrosia.domain.NutrientProgress" />
+
+        <variable
+            name="headerVisibility"
+            type="Integer" />
+
+        <variable
+            name="dividerVisibility"
+            type="Integer" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/simple_padding_medium"
+        android:paddingBottom="@dimen/simple_padding_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="@{headerVisibility}"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/simple_padding_medium"
+                android:layout_marginBottom="@dimen/simple_padding_medium"
+                android:visibility="@{dividerVisibility}"
+                android:background="@color/colorDividers" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/simple_padding_large"
+                android:layout_marginEnd="@dimen/simple_padding_large"
+                android:layout_marginBottom="@dimen/simple_padding_large"
+                android:text="@{nutrientProgress.nutrient.category}"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_size_secondary"
+                tools:text="@string/placeholder" />
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/item_nutrient_progress_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/simple_padding_large"
+            android:layout_marginEnd="@dimen/simple_padding_large"
+            bind:nutrientProgress="@{nutrientProgress}" />
+
+    </LinearLayout>
+
+</layout>

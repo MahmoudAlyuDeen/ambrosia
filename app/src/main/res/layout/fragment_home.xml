@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.HomeFragment">
+
+    <data>
+
+        <variable
+            name="homeViewModel"
+            type="com.mahmoudalyudeen.ambrosia.ui.home.HomeViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/home_coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/home_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/home_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ToolbarTheme"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="@string/title_home" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/nutrients_progress_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="@dimen/simple_padding_medium"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:nutrientsProgress="@{homeViewModel.nutrientsProgress}"
+                app:spanCount="2"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_nutrient_progress_circle" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/entries_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/list_fab_bottom_margin"
+            app:entries="@{homeViewModel.entries}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_entry" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_entry_fab"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/simple_padding_large"
+            android:onClick="@{()->homeViewModel.onAddEntryClick()}"
+            android:text="@string/button_add_entry"
+            android:textColor="@color/colorTextPrimaryDark"
+            app:backgroundTint="@color/colorAccent"
+            app:icon="@drawable/ic_add"
+            app:iconTint="@color/colorTextPrimaryDark" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

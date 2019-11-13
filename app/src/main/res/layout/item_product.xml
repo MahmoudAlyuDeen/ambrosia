@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.mahmoudalyudeen.ambrosia.domain.Product" />
+
+        <variable
+            name="productListener"
+            type="com.mahmoudalyudeen.ambrosia.ui.products.ProductListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{_ ->productListener.onClick(product)}"
+        android:orientation="vertical"
+        android:padding="@dimen/simple_padding_large">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{product.name}"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_size_primary"
+            tools:text="@string/placeholder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/format_nutrient_count, product.nutrientAmounts.size())}"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/text_size_secondary"
+            tools:text="@string/placeholder" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="nutrientProgress"
+            type="com.mahmoudalyudeen.ambrosia.domain.NutrientProgress" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/simple_padding_medium">
+
+        <include
+            layout="@layout/item_nutrient_progress_content"
+            bind:nutrientProgress="@{nutrientProgress}" />
+
+    </FrameLayout>
+
+</layout>
